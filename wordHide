@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.Write("Please, insert your string to be replaced:  ");
+            string pwhide=Console.ReadLine();
+            var num=pwhide.Length;
+            Console.Write("Please, insert your string to be checked:  ");
+            string input = Console.ReadLine();
+            List <string> text = new List<string>();
+            char[] separators = new char[] { ' ', ',', '.',';','-','!' };
+            string[] wordInput = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+           
+            foreach (var item in wordInput)
+            {
+                if (item == pwhide)
+                {
+                    for (int i = 0; i < num; i++)
+                    {
+                        string pw = "";
+                        string pw1 = pw + "*";
+                        Console.Write(pw1 + " ");
+                    }
+                }Console.Write(item +" ");
+            }
+        }
+    }
+}
